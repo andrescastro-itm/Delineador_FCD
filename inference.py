@@ -3,6 +3,7 @@ import numpy as np
 import matplotlib.pyplot as plt
 import torch
 import torch.nn as nn
+from tqdm import tqdm
 
 from unet import load_model, segment
 
@@ -30,7 +31,7 @@ def inference(config):
 	#Iterar por slices en vista axial
 	if config['numslice'] == -1:
 	
-		for i in range(vol.shape[2]):
+		for i in tqdm(range(vol.shape[2])):
 			slice = torch.tensor(vol[...,i]).unsqueeze(0).unsqueeze(1)
 			seg = segment(unet, slice)
 			fig = plt.figure(figsize=(128*4/300, 128*4/300),frameon=False)
