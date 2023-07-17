@@ -11,12 +11,12 @@ def preprocess(path, config, norm=False):
 
     # if 'Ras_msk' in path:
 
-    #     try:
-    #         vol = scan.get_fdata().squeeze(3)
-    #         scan = nib.Nifti1Image(vol, aff)
-    #     except:
-    #         vol = np.where(vol==0., 0., 1.)
-    #         scan = nib.Nifti1Image(vol, aff)
+    try:
+        vol = scan.get_fdata().squeeze(3)
+        scan = nib.Nifti1Image(vol, aff)
+    except:
+        #vol = np.where(vol==0., 0., 1.)
+        scan = nib.Nifti1Image(vol, aff)
 
 
     # Remuestrea volumen y affine a un nuevo shape
