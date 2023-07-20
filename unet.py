@@ -185,9 +185,7 @@ class Unet(nn.Module):
 
 def load_model(config):
     device = "cuda" if torch.cuda.is_available() else "cpu"
-    print(f"\nUsing {device} device\n")
-
-
+    #print(f"\nUsing {device} device\n")
     unet = Unet(num_classes=1, depth=5, batchnorm=config['hyperparams']['batchnorm']).to(device, dtype=torch.double)
     try:
         unet.load_state_dict(torch.load(config['files']['model']))

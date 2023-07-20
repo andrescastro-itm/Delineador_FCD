@@ -77,7 +77,7 @@ class Cnn2D(nn.Module):
 
 def load_model_clas(config):
     device = "cuda" if torch.cuda.is_available() else "cpu"
-    print(f"\nUsing {device} device\n")
+    print(f"Usando {device}")
 
     cnn = Cnn2D(1, 1).to(device, dtype=torch.double)
     try:

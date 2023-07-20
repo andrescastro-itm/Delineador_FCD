@@ -3,10 +3,10 @@ import datetime
 def get_parameters(args):
 
     # mode = 'reg' # available modes: 'reg', 'train', 'test'
-    print(args.input)
-    print(args.output)
-    print(args.numslice)
-    print(args.useclassifier)
+    # print(args.input)
+    # print(args.output)
+    # print(args.numslice)
+    # print(args.useclassifier)
     hyperparams = {'model_dims': (128, 128, 64), # Dimensiones de entrada al modelo
                    'lr'        : 0.00001,         # Taza de aprendizaje
                    'epochs'    : 20,             # Numero de epocas

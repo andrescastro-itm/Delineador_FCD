@@ -15,7 +15,7 @@ def inference(config):
 	#Leer volumen
 	input_path = config['files']['input']
 	vol = preprocess(input_path,config, norm = True)
-	print(vol.shape)
+	#print(vol.shape)
 
 	#Crear Carpeta de salida en caso que no exista
 	out_path = config['files']['output']
@@ -36,10 +36,11 @@ def inference(config):
 	#Iterar por slices en vista axial
 	if config['numslice'] == -1:
 	
-		for i in tqdm(range(vol.shape[2]), bar_format='Slices procesados: {desc}{percentage:3.0f}%|{bar:30}|'):
+		#for i in tqdm(range(vol.shape[2]), bar_format='Slices procesados: {desc}{percentage:3.0f}%|{bar:30}|'):
+		for i in tqdm(range(vol.shape[2]), desc= 'Slices procesados', bar_format='{desc}: {n_fmt}/{total_fmt}'):
 			slice = torch.tensor(vol[...,i]).unsqueeze(0).unsqueeze(1)
 			prob = cnn(slice)
-			print(f'salida red clasificación: {prob.item()}')
+			#print(f'salida red clasificación: {prob.item()}')
 			if config['useclas']:
 				if (prob >= 0.5):
 					plot = True

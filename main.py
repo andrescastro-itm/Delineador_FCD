@@ -2,13 +2,11 @@ import argparse
 from config import get_parameters
 from inference import inference
 
-
-print("inicio programa")
-
 def main(config):
 	inference(config)
 
 if __name__ == '__main__':
+	print(f'Programa de delineacion de FCD en ejecucion...')
 	parser = argparse.ArgumentParser(description='Modelo para segmentacion semántica de displasia cortical\
                                                   focal en imagenes de resonancia magnetica')
 
