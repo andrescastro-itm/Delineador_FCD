@@ -18,6 +18,8 @@ if __name__ == '__main__':
 
 	parser.add_argument('-nums','--numslice', type=int, help="""Número de slice a segmentar""",default=-1)
 
+	parser.add_argument('-useclas','--useclassifier', type=int, help="""Usar clasificador (0 si no se desea usar, en caso contrario 1)""",default=1)
+
 	args = parser.parse_args()
 
 	if not args.output:

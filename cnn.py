@@ -74,3 +74,15 @@ class Cnn2D(nn.Module):
         # return the output predictions
         
         return output
+
+def load_model_clas(config):
+    device = "cuda" if torch.cuda.is_available() else "cpu"
+    print(f"\nUsing {device} device\n")
+
+    cnn = Cnn2D(1, 1).to(device, dtype=torch.double)
+    try:
+        cnn.load_state_dict(torch.load(config['files']['clasModel']))
+    except:
+        cnn.load_state_dict(torch.load(config['files']['clasModel'],map_location=device))
+
+    return cnn

@@ -6,6 +6,7 @@ def get_parameters(args):
     print(args.input)
     print(args.output)
     print(args.numslice)
+    print(args.useclassifier)
     hyperparams = {'model_dims': (128, 128, 64), # Dimensiones de entrada al modelo
                    'lr'        : 0.00001,         # Taza de aprendizaje
                    'epochs'    : 20,             # Numero de epocas
@@ -20,7 +21,8 @@ def get_parameters(args):
 
     files = {'input': args.input,
              'model': './model/weights-BCEDice-10_eps-25_heads-2023-06-30-_nobn-e7.pth', 
-             'output': args.output}
+             'output': args.output,
+             'clasModel': './model/Deteccion-weights-e15.pth'}
 
     labels = {'bgnd': 0, # Image background
               'FCD' : 1, # Focal cortical dysplasia
@@ -29,4 +31,5 @@ def get_parameters(args):
     return {'labels'   : labels,
             'hyperparams' : hyperparams,
             'files'    : files,
-            'numslice' : args.numslice}
+            'numslice' : args.numslice,
+            'useclas': args.useclassifier}

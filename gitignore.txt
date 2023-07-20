@@ -1,8 +1,9 @@
 *.csv
 *.pyc
 *.log
-*.pth
+#*.pth
 *.txt
+*.nii.gz
 **/__pycache__
 **/data
 **/outs
