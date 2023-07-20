@@ -36,7 +36,7 @@ def inference(config):
 	#Iterar por slices en vista axial
 	if config['numslice'] == -1:
 	
-		for i in tqdm(range(vol.shape[2]), bar_format='Slices procesados: {desc}{percentage:3.0f}%|{bar:30}'):
+		for i in tqdm(range(vol.shape[2]), bar_format='Slices procesados: {desc}{percentage:3.0f}%|{bar:30}|'):
 			slice = torch.tensor(vol[...,i]).unsqueeze(0).unsqueeze(1)
 			prob = cnn(slice)
 			print(f'salida red clasificación: {prob.item()}')

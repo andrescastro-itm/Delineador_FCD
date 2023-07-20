@@ -1,0 +1,10 @@
+*.csv
+*.pyc
+*.log
+*.pth
+*.txt
+*.nii.gz
+**/__pycache__/
+**/data/
+**/out/
+**/model/

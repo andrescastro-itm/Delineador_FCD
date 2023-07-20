@@ -26,7 +26,8 @@ if __name__ == '__main__':
 		path = '/'.join(args.input.split('/')[:-1])
 		args.output = path + '/out/'
 	else:
-		args.output = args.output+'/out/'
+		if args.output[-1] != '/':
+			args.output = args.output+'/'
 
 	# if args.output[-1] != '/':
 	# 	args.output = args.output+'/'
