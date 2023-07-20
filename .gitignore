@@ -1,4 +1,3 @@
-*.csv
 *.pyc
 *.log
 *.pth
@@ -7,4 +6,4 @@
 **/__pycache__/
 **/data/
 **/out/
-**/model/
+model/
