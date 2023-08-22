@@ -20,7 +20,7 @@ def get_parameters(args):
     }
 
     files = {'input': args.input,
-             'model': './model/weights-BCEDice-10_eps-25_heads-2023-06-30-_nobn-e7.pth', 
+             'model': './model/DelinWeights.pth', 
              'output': args.output,
              'clasModel': './model/Deteccion-weights-e15.pth'}
 
